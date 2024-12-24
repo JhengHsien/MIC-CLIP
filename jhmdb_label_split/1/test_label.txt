@@ -1,0 +1,5 @@
+throw
+pullup
+catch
+kick_ball
+run

@@ -1,0 +1,5 @@
+climb_stairs
+stand
+shoot_gun
+pick
+brush_hair

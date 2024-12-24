@@ -1,0 +1,30 @@
+-e git+https://github.com/MVIG-SJTU/AlphAction.git@99acc16d4fd91ddd91d34665ee9c21607ebbd9a0#egg=alphaction
+av @ file:///home/conda/feedstock_root/build_artifacts/av_1602729435233/work
+certifi==2020.6.20
+cffi @ file:///tmp/build/80754af9/cffi_1600699180754/work
+cycler==0.10.0
+Cython @ file:///tmp/build/80754af9/cython_1594831564311/work
+cython-bbox==0.1.3
+easydict==1.9
+future==0.18.2
+kiwisolver==1.2.0
+matplotlib==3.3.2
+mkl-fft==1.2.0
+mkl-random==1.1.1
+mkl-service==2.3.0
+numpy @ file:///tmp/build/80754af9/numpy_and_numpy_base_1603479632437/work
+olefile==0.46
+opencv-python==4.4.0.44
+Pillow @ file:///tmp/build/80754af9/pillow_1602788700959/work
+protobuf==3.13.0
+pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
+pyparsing==2.4.7
+python-dateutil==2.8.1
+PyYAML==5.3.1
+scipy==1.5.3
+six==1.15.0
+tensorboardX==2.1
+torch==1.6.0
+torchvision==0.7.0
+tqdm==4.51.0
+yacs==0.1.8

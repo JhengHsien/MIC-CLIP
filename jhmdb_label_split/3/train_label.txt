@@ -1,0 +1,16 @@
+clap
+sit
+wave
+throw
+pullup
+catch
+kick_ball
+run
+climb_stairs
+stand
+shoot_gun
+pick
+brush_hair
+golf
+swing_baseball
+walk

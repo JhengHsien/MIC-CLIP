@@ -1,0 +1,62 @@
+MODEL:
+  ROI_ACTION_HEAD:
+    FEATURE_EXTRACTOR: "2MLPFeatureExtractor"
+    POOLER_TYPE: "align3d"
+    MEAN_BEFORE_POOLER: True
+    POOLER_RESOLUTION: 7
+    POOLER_SCALE: 0.0625
+    POOLER_SAMPLING_RATIO: 0
+    NUM_CLASSES: 21
+    PROPOSAL_PER_CLIP: 10
+    DROPOUT_RATE: 0.2
+    PREFIX_LEN: 16
+    POSTFIX_LEN: 16
+  HIT_STRUCTURE:
+    ACTIVE: True
+    STRUCTURE: "serial"
+    DROPOUT: 0.2
+    FUSION: "add"
+    TEMPORAL_POSITION: True
+    USE_ZERO_INIT_CONV: True
+    LAYER_NORM: True
+    MAX_PERSON: 25
+    MAX_KEYPOINTS: 25 # 10
+    MAX_OBJECT: 5
+    MAX_PER_SEC: 10 # 10
+    DIM_INNER: 1024
+    DIM_OUT: 2304
+    I_BLOCK_LIST: [ "P", "O", "S", "M", "P", "O", "S", "M",]
+INPUT:
+  FRAME_NUM: 32
+  FRAME_SAMPLE_RATE: 1
+  TAU: 4
+  ALPHA: 1
+  SLOW_JITTER: True
+  COLOR_JITTER: True
+DATASETS:
+  TRAIN: ("jhmdb_train",)
+  TEST: ("jhmdb_val",)
+DATASET_LABEL: "jhmdb_label_split/1/train_label.txt"
+TESTSET_LABEL: "jhmdb_label_split/1/test_label.txt" 
+DATASET_VIDEO: "jhmdb_label_split/1/train_video.txt"
+TESTSET_VIDEO: "jhmdb_label_split/1/test_video.txt"
+DATALOADER:
+  NUM_WORKERS: 8
+  SIZE_DIVISIBILITY: 16
+SOLVER:
+  BASE_LR: 0.0002 #0.0002
+  WARMUP_FACTOR: 0.25
+  BIAS_LR_FACTOR: 2
+  IA_LR_FACTOR: 10.0
+  WEIGHT_DECAY: 1e-7
+  STEPS: (20000, 25000)
+  WARMUP_ITERS: 700
+  MAX_ITER: 7000
+  CHECKPOINT_PERIOD: 1000
+  EVAL_PERIOD: 25000
+  VIDEOS_PER_BATCH: 8
+TEST:
+  BOX_THRESH: 0.
+  ACTION_THRESH: 0.
+  VIDEOS_PER_BATCH: 8
+OUTPUT_DIR: "data/output/dense_serial_debug"
